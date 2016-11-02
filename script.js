@@ -85,8 +85,41 @@ function gotStream(stream) {
 }
 var rectSize;
 function drawLoop( time ) {
-    console.log("LOLOLOLOL");
-    rectSize=meter.volume*meter.volume;
-    console.log(rectSize);
+    var amplitude = Math.round(meter.volume*100);
+	var bodyStyles = window.getComputedStyle(document.body);
+	var speedStr = bodyStyles.getPropertyValue('--speed');
+	var speed = parseInt(speedStr.split('m')[0]);
+	if(amplitude>7){
+		if(speed<500) {
+			speed=500;
+		} else {
+			speed-=80;
+		}
+	} else {
+		if(speed>9950){
+			speed=10000;
+		} else {
+			speed+=30;	
+		}
+	}
+	newSpeedStr = speed.toString() + "ms";
+	console.log(newSpeedStr);
+	document.body.style.setProperty('--speed', newSpeedStr);
     rZafID = window.requestAnimationFrame( drawLoop );
 }
+
+var v = countDownTimer();
+function countDownTimer () {
+	var currDate = new Date();
+	var eventDate = new Date("Feb 3 2017 20:00:00");
+	var timeDiff = eventDate - currDate;
+	var seconds = Math.floor((timeDiff / 1000) % 60);
+	var mins = Math.floor((timeDiff / (1000 * 60)) % 60);
+	var hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+	var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+	document.getElementById("days_number").innerHTML= days;
+	document.getElementById("hours_number").innerHTML= hours;
+	document.getElementById("minutes_number").innerHTML= mins;
+	document.getElementById("seconds_number").innerHTML= seconds;
+}
+var interval = setInterval(countDownTimer,1000);

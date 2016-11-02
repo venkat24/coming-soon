@@ -1,14 +1,50 @@
+@font-face {
+    font-family: "Mark My Words";
+    src: url(mark_my_words.ttf);
+}
 html, body{
+  font-family : "Mark My Words";
   width: 100%;
   height: 100%;
   position: fixed;
   overflow: hidden;
+  --speed: 10000ms;
+  color: white;
+}
+.label {
+	font-size: 300px;
 }
 
 body {
   background-image: url("backdrop.png");
   background-size: 100% 100%;
   transition: background 2s ease-in-out;
+  text-align:center;
+}
+#mainblock>div{
+	display:inline-block;
+	border-radius:10px;
+	min-width:100px;
+	padding:0px;
+	margin:2px;
+}
+#mainblock>div>div{
+	font-size:20px;
+	padding:0px;
+	padding-top:5px;
+	padding-bottom:0px;
+	color:white;
+	border-radius:10px;
+}
+#mainblock>div>span{
+	font-size:50px;
+	padding:0px;
+	color:white;
+}
+
+h1 {
+	text-align: center;
+	font-size: 100px;
 }
 .main-container {
   width: 100px;
@@ -19,19 +55,19 @@ body {
   left: 47%;
   z-index: 100;
   -webkit-animation-name: spin;
-  -webkit-animation-duration: 1500ms;
+  -webkit-animation-duration: var(--speed);
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: spin;
-  -moz-animation-duration: 1500ms;
+  -moz-animation-duration: var(--speed);
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   -ms-animation-name: spin;
-  -ms-animation-duration: 1500ms;
+  -ms-animation-duration: var(--speed);
   -ms-animation-iteration-count: infinite;
   -ms-animation-timing-function: linear;
   animation-name: spin;
-  animation-duration: 1950ms;
+  animation-duration: var(--speed);
   animation-iteration-count: infinite;
   animation-timing-function: linear;  
 }
