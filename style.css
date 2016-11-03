@@ -4,10 +4,13 @@
 }
 html, body{
   font-family : "Mark My Words";
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
-  position: fixed;
+  /* position: fixed; */
   overflow: hidden;
+  margin:  0 auto;
+  left: 0;
+  right:  0;
   --speed: 10000ms;
   color: white;
 }
@@ -15,11 +18,14 @@ html, body{
 	font-size: 300px;
 }
 
+#mainblock {
+  text-align:center;
+}
+
 body {
   background-image: url("backdrop.png");
   background-size: 100% 100%;
   transition: background 2s ease-in-out;
-  text-align:center;
 }
 #mainblock>div{
 	display:inline-block;
@@ -45,14 +51,19 @@ body {
 h1 {
 	text-align: center;
 	font-size: 100px;
+} 
+h2 {
+  text-align: center;
 }
+
 .main-container {
   width: 100px;
   height: 100px;
-  margin: 30px auto;
   position: absolute;
   bottom: 44px;
-  left: 47%;
+  left: 50%;
+  margin: 0 0 0 -3%;
+  transform: translate(-50%, -50%);
   z-index: 100;
   -webkit-animation-name: spin;
   -webkit-animation-duration: var(--speed);
@@ -69,7 +80,7 @@ h1 {
   animation-name: spin;
   animation-duration: var(--speed);
   animation-iteration-count: infinite;
-  animation-timing-function: linear;  
+  animation-timing-function: linear;
 }
 @-ms-keyframes spin {
     from { -ms-transform: rotate(0deg); }
@@ -126,6 +137,15 @@ h1 {
 }
 #pin-4 .pin-base{
    border-left: 30px solid #acb1b2;
+}
+
+#pinwheel-prompt {
+  font-size: 20px;
+  position: fixed;
+  bottom: 190px;
+  left:  43%;
+  transform: translate(-50%, -50%);
+
 }
 
 .pin-big-triangle{
