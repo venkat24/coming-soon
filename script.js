@@ -89,7 +89,7 @@ function drawLoop( time ) {
 	var bodyStyles = window.getComputedStyle(document.body);
 	var speedStr = bodyStyles.getPropertyValue('--speed');
 	var speed = parseInt(speedStr.split('m')[0]);
-	if(amplitude>7){
+	if(amplitude>9){
 		if(speed<500) {
 			speed=500;
 		} else {
