@@ -4,9 +4,7 @@
 }
 html, body{
   font-family : "Mark My Words";
-  /* width: 100%; */
   height: 100%;
-  /* position: fixed; */
   overflow: hidden;
   margin:  0 auto;
   left: 0;
@@ -62,9 +60,12 @@ h2 {
   position: absolute;
   bottom: 44px;
   left: 50%;
-  margin: 0 0 0 -3%;
-  transform: translate(-50%, -50%);
   z-index: 100;
+}
+
+#pinwheel-container {
+  position: relative;
+  left: -50%;
   -webkit-animation-name: spin;
   -webkit-animation-duration: var(--speed);
   -webkit-animation-iteration-count: infinite;
@@ -81,6 +82,11 @@ h2 {
   animation-duration: var(--speed);
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+#pinwheel-subcontainer {
+  position: relative;
+  bottom:  50px;
 }
 @-ms-keyframes spin {
     from { -ms-transform: rotate(0deg); }
@@ -140,12 +146,15 @@ h2 {
 }
 
 #pinwheel-prompt {
+  position: absolute;
   font-size: 20px;
-  position: fixed;
-  bottom: 190px;
-  left:  43%;
-  transform: translate(-50%, -50%);
+  bottom: 250px;
+  left:  50%;
+}
 
+#prompt-text {
+  position: relative;
+  left: -50%;
 }
 
 .pin-big-triangle{
